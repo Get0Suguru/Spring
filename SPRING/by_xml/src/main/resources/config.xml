@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- boilerplate code downloaded from web to make the stuff work for us  -->
+
+
+
+    <!-- for the constants u named -->
+    <context:property-placeholder location="car.properties"/>
+    <context:component-scan base-package="org.example"/>
+
+
+
+
+<!--how to make a bean   => a bean have #1 -> id and #2 -> class (jiska obj chahiye)  -->
+
+    <bean id="myVehicle" class="org.example.Car" scope="prototype">               <!-- make changes here to change the obj -->
+<!--        <constructor-arg ref="myVehicleEngine"/>    -->
+        <property name="engine" ref="myVehicleEngine"/>                             <!--its injection-->
+        <property name="modelName" value="Honda"/>                                  <!-- its drt value-->
+        <property name="cost" value="${car.mrp}"/>                                  <!-- also literal value-->
+    </bean>
+
+    <bean id="myVehicleEngine" class="org.example.Engine">
+
+    </bean>
+
+</beans>
