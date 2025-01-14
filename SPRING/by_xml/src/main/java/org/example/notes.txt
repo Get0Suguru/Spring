@@ -1,0 +1,6 @@
+
+#1
+we don't want the object created inside our main code we just want to focus on logic that why we
+externalize the obj creation
+
+#2
