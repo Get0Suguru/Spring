@@ -1,0 +1,9 @@
+
+
+DI and externalizing the object creation are two different things
+
+1. we need DI because we externalize the object creation and now -> we just can't pass the data so we do it through di
+
+di can be done in 3 ways -> constructor, setter, field
+
+to pass data we just make the data variable as empty and make the injection way one of the 3 to make it fill
